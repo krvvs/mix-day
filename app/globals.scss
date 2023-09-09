@@ -105,9 +105,6 @@ nav,
 section {
   display: block;
 }
-body {
-  line-height: 1;
-}
 ol,
 ul {
   list-style: none;
@@ -136,9 +133,10 @@ table {
 
 body {
   max-width: 100vw;
+  padding: 0 52px;
   overflow-x: hidden;
   font-family: "Apple SD Gothic Neo";
-  color: #111111;
+  color: #121212;
   background: #fafafa;
 }
 
