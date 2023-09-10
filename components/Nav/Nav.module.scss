@@ -1,10 +1,15 @@
 .nav {
+  position: fixed;
+  top: 0;
   height: 80px;
   display: flex;
+  width: calc(100vw - 104px);
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 43px;
+  background-color: #fafafa;
 
-  .flex {
+  .flexUnit {
     display: flex;
     align-items: center;
   }
@@ -23,7 +28,6 @@
     width: 300px;
     height: 38px;
     padding: 0 20px;
-    margin-right: 12px;
     border: 1.5px solid #cccccc;
     border-radius: 50px;
 
@@ -38,10 +42,10 @@
       font-weight: 400;
       border: none;
       background-color: transparent;
-    }
 
-    input::placeholder {
-      color: #aaaaaa;
+      &::placeholder {
+        color: #aaaaaa;
+      }
     }
   }
 

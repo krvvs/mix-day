@@ -1,5 +1,6 @@
-import "./globals.scss";
 import type { Metadata } from "next";
+import Nav from "@/components/Nav/Nav";
+import "./globals.scss";
 
 export const metadata: Metadata = {
   title: "믹스(Mix) - 마케팅 인사이트 미디어",
@@ -13,7 +14,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Nav />
+        {children}
+      </body>
     </html>
   );
 }
