@@ -1,12 +1,13 @@
 .nav {
-  position: fixed;
+  position: sticky;
   top: 0;
+  width: 100vw;
   height: 80px;
+  padding: 0 62px 0 52px;
   display: flex;
-  width: calc(100vw - 104px);
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 43px;
+  margin: 0 0 43px -52px;
   background-color: #fafafa;
 
   .flexUnit {

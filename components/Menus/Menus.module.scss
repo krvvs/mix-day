@@ -1,4 +1,6 @@
 .menus {
+  position: sticky;
+  top: 80px;
   display: flex;
   flex-direction: column;
   gap: 5px;

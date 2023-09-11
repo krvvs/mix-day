@@ -22,5 +22,26 @@
       line-height: 1.2;
       color: #999999;
     }
+
+    .cardContainer {
+      width: 100%;
+      display: flex;
+      gap: 20px;
+    }
+
+    .featured {
+    }
+
+    .banner {
+      max-width: 75vw;
+    }
+
+    .original {
+      overflow: hidden;
+    }
+
+    .latest {
+      flex-wrap: wrap;
+    }
   }
 }
