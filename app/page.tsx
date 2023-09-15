@@ -10,14 +10,18 @@ import OriginalCard from "@/components/OriginalCard/OriginalCard";
 import ContentCard from "@/components/ContentCard/ContentCard";
 import styles from "./page.module.scss";
 
+interface Tags {
+  tag: string;
+}
 interface ContentProps {
   id: string;
   title: string;
-  abstractcontents?: string;
+  abstractcontents: string;
   updatedate: string;
   authorname: string;
-  mix_content_tags: string[];
+  mix_content_tags: Tags[];
   imgurl: string;
+  offlineapplyurl: string;
 }
 
 async function getContent(query: string) {
@@ -53,7 +57,27 @@ export default async function Home() {
             </div>
           </div>
           <div className={`${styles.cardContainer} ${styles.featured}`}>
-            <FeaturedCard />
+            {featured.data.mix_content.map(
+              ({
+                id,
+                title,
+                abstractcontents,
+                authorname,
+                mix_content_tags,
+                imgurl,
+              }: ContentProps) => {
+                return (
+                  <FeaturedCard
+                    key={id}
+                    title={title}
+                    abstractcontents={abstractcontents}
+                    authorname={authorname}
+                    mix_content_tags={mix_content_tags}
+                    imgurl={imgurl}
+                  />
+                );
+              }
+            )}
           </div>
         </section>
         <section>
@@ -72,6 +96,7 @@ export default async function Home() {
                 authorname,
                 mix_content_tags,
                 imgurl,
+                offlineapplyurl,
               }: ContentProps) => {
                 return (
                   <OriginalCard
@@ -81,6 +106,7 @@ export default async function Home() {
                     authorname={authorname}
                     mix_content_tags={mix_content_tags}
                     imgurl={imgurl}
+                    offlineapplyurl={offlineapplyurl}
                   />
                 );
               }
@@ -90,7 +116,29 @@ export default async function Home() {
         <section>
           <div className={styles.sectionTitle}>최신 콘텐츠</div>
           <div className={`${styles.cardContainer} ${styles.latest}`}>
-            <ContentCard />
+            {latest.data.mix_content.map(
+              ({
+                id,
+                title,
+                abstractcontents,
+                updatedate,
+                authorname,
+                mix_content_tags,
+                imgurl,
+              }: ContentProps) => {
+                return (
+                  <ContentCard
+                    key={id}
+                    title={title}
+                    abstractcontents={abstractcontents}
+                    updatedate={updatedate}
+                    authorname={authorname}
+                    mix_content_tags={mix_content_tags}
+                    imgurl={imgurl}
+                  />
+                );
+              }
+            )}
           </div>
         </section>
       </main>

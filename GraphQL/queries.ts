@@ -28,6 +28,7 @@ query Mix_content($limit: Int, $offset: Int, $orderBy: [mix_content_order_by!], 
       tag
     }
     imgurl
+    offlineapplyurl
     id
   }
 }`;
