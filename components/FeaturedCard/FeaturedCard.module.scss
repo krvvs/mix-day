@@ -1,0 +1,42 @@
+.featuredCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 40px 52px 44px;
+  height: 440px;
+  width: 700px;
+  border-radius: 12px;
+  background-size: cover;
+  background-position: center center;
+
+  .tag {
+    margin-right: 5px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: #638fff;
+  }
+
+  .title {
+    margin-top: 20px;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.35;
+    color: #ffffff;
+  }
+
+  .abstractcontents {
+    font-size: 15px;
+    font-weight: 400;
+    color: #cccccc;
+    line-height: 1.35;
+  }
+
+  .authorname {
+    margin-top: 50px;
+    font-size: 15px;
+    font-weight: 400;
+    color: #cccccc;
+    line-height: 1.35;
+  }
+}

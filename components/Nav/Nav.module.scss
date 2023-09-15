@@ -1,10 +1,16 @@
 .nav {
+  position: sticky;
+  top: 0;
+  width: 100vw;
   height: 80px;
+  padding: 0 62px 0 52px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 0 0 43px -52px;
+  background-color: #fafafa;
 
-  .flex {
+  .flexUnit {
     display: flex;
     align-items: center;
   }
@@ -23,7 +29,6 @@
     width: 300px;
     height: 38px;
     padding: 0 20px;
-    margin-right: 12px;
     border: 1.5px solid #cccccc;
     border-radius: 50px;
 
@@ -38,10 +43,10 @@
       font-weight: 400;
       border: none;
       background-color: transparent;
-    }
 
-    input::placeholder {
-      color: #aaaaaa;
+      &::placeholder {
+        color: #aaaaaa;
+      }
     }
   }
 

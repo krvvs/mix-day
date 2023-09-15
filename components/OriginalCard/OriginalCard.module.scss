@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+
+.originalCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  min-width: 300px;
+  aspect-ratio: 1/1;
+  border-radius: 12px;
+  background-size: cover;
+  background-position: center center;
+
+  .badge {
+    justify-content: center;
+    height: fit-content;
+    width: fit-content;
+    padding: 6px 10px;
+    font-family: "Montserrat";
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.2;
+    color: #ffffff;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .title {
+    margin-bottom: 5px;
+    width: 192px;
+    word-break: keep-all;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #ffffff;
+  }
+
+  .info {
+    margin-bottom: 5px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #ffffff;
+  }
+
+  .tag {
+    margin-right: 5px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: #638fff;
+  }
+}

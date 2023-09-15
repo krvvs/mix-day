@@ -1,11 +1,11 @@
+import Link from "next/link";
 import Image from "next/image";
 import styles from "./Nav.module.scss";
-import Link from "next/link";
 
 export default function Nav() {
   return (
-    <div className={styles.nav}>
-      <div className={styles.flex}>
+    <header className={styles.nav}>
+      <div className={styles.flexUnit}>
         <Link href="/">
           <Image
             className={styles.logo}
@@ -23,11 +23,14 @@ export default function Nav() {
             width={16}
             height={16}
           />
-          <input className={styles.searchInput} placeholder="검색하세요" />
+          <input
+            type="text"
+            className={styles.searchInput}
+            placeholder="검색하세요"
+          />
         </form>
       </div>
-
       <button className={styles.signIn}>로그인</button>
-    </div>
+    </header>
   );
 }
