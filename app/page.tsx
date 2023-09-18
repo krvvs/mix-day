@@ -4,7 +4,7 @@ import {
   FEATURED_CONTENT,
   ORIGINAL_CONTENT,
   LATEST_CONTENT,
-} from "@/GraphQL/queries";
+} from "@/graphql/queries";
 import Menus from "@/components/Menus/Menus";
 import FeaturedCard from "@/components/FeaturedCard/FeaturedCard";
 import Banner from "@/components/Banner/Banner";
