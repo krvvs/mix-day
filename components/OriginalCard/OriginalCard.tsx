@@ -1,17 +1,6 @@
 import { contentTags } from "@/utils/tags";
+import { Mix_Content, Mix_Content_Tag } from "@/graphql/types";
 import styles from "./OriginalCard.module.scss";
-
-interface Tags {
-  tag: string;
-}
-interface Props {
-  title: string;
-  updatedate: string;
-  authorname: string;
-  mix_content_tags: Tags[];
-  imgurl: string;
-  offlineapplyurl: string;
-}
 
 export default function OriginalCard({
   title,
@@ -20,7 +9,7 @@ export default function OriginalCard({
   mix_content_tags,
   imgurl,
   offlineapplyurl,
-}: Props) {
+}: Mix_Content) {
   return (
     <div
       className={styles.originalCard}
@@ -37,7 +26,7 @@ export default function OriginalCard({
           {updatedate} | {authorname}
         </div>
         <div className={styles.tags}>
-          {mix_content_tags.map(({ tag }: Tags) => {
+          {mix_content_tags.map(({ tag }: Mix_Content_Tag) => {
             return (
               <span key={tag} className={styles.tag}>
                 #{contentTags[tag]}

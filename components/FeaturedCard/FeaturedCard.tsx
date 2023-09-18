@@ -1,16 +1,6 @@
 import { contentTags } from "@/utils/tags";
+import { Mix_Content, Mix_Content_Tag } from "@/graphql/types";
 import styles from "./FeaturedCard.module.scss";
-
-interface Tags {
-  tag: string;
-}
-interface Props {
-  title: string;
-  abstractcontents: string;
-  authorname: string;
-  mix_content_tags: Tags[];
-  imgurl: string;
-}
 
 export default function FeaturedCard({
   title,
@@ -18,7 +8,7 @@ export default function FeaturedCard({
   authorname,
   mix_content_tags,
   imgurl,
-}: Props) {
+}: Mix_Content) {
   return (
     <div
       className={styles.featuredCard}
@@ -27,7 +17,7 @@ export default function FeaturedCard({
       }}
     >
       <div className={styles.tags}>
-        {mix_content_tags.map(({ tag }: Tags) => {
+        {mix_content_tags.map(({ tag }: Mix_Content_Tag) => {
           return (
             <span key={tag} className={styles.tag}>
               #{contentTags[tag]}
