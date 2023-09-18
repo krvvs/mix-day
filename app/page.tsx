@@ -1,3 +1,5 @@
+import { gql } from "@apollo/client";
+import { getClient } from "@/lib/client";
 import {
   FEATURED_CONTENT,
   ORIGINAL_CONTENT,
@@ -25,25 +27,23 @@ interface ContentProps {
 }
 
 async function getContent(query: string) {
-  const endpoint = process.env.GRAPHQL_API_ENDPOINT as string;
-  const result: any = await fetch(endpoint, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      query: query,
-    }),
-  }).then((res) => res.json());
-
-  return result;
+  try {
+    const { data } = await getClient().query({
+      query: gql`
+        ${query}
+      `,
+    });
+    return data;
+  } catch (error) {
+    console.error("GraphQL query error:", error);
+    return null;
+  }
 }
 
 export default async function Home() {
   const featured = await getContent(FEATURED_CONTENT);
   const original = await getContent(ORIGINAL_CONTENT);
   const latest = await getContent(LATEST_CONTENT);
-  console.log(featured.data);
-  console.log(original.data);
-  console.log(latest.data);
 
   return (
     <div className={styles.home}>
@@ -57,7 +57,7 @@ export default async function Home() {
             </div>
           </div>
           <div className={`${styles.cardContainer} ${styles.featured}`}>
-            {featured.data.mix_content.map(
+            {featured.mix_content.map(
               ({
                 id,
                 title,
@@ -88,7 +88,7 @@ export default async function Home() {
         <section>
           <div className={styles.sectionTitle}>오리지널 콘텐츠</div>
           <div className={`${styles.cardContainer} ${styles.original}`}>
-            {original.data.mix_content.map(
+            {original.mix_content.map(
               ({
                 id,
                 title,
@@ -116,7 +116,7 @@ export default async function Home() {
         <section>
           <div className={styles.sectionTitle}>최신 콘텐츠</div>
           <div className={`${styles.cardContainer} ${styles.latest}`}>
-            {latest.data.mix_content.map(
+            {latest.mix_content.map(
               ({
                 id,
                 title,
