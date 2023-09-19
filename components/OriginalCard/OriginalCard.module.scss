@@ -16,7 +16,7 @@
     height: fit-content;
     width: fit-content;
     padding: 6px 10px;
-    font-family: "Montserrat";
+    font-family: "Montserrat", sans-serif;
     font-size: 12px;
     font-weight: 500;
     line-height: 1.2;
@@ -28,7 +28,6 @@
   .title {
     margin-bottom: 5px;
     width: 192px;
-    word-break: keep-all;
     font-size: 16px;
     font-weight: 700;
     line-height: 1.5;
