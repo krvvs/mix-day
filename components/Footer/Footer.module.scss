@@ -4,7 +4,7 @@
   margin-top: 60px;
   margin-left: -52px;
   padding: 30px 52px 50px;
-  width: 100vw;
+  width: calc(100vw - 10px);
   border-top: 1.5px solid rgba(0, 0, 0, 0.1);
 
   .info {
