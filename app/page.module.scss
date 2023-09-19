@@ -1,47 +1,62 @@
 .home {
   display: flex;
-  gap: 45px;
   width: 100%;
 
   .feed {
     display: flex;
     flex-direction: column;
     gap: 70px;
-    width: 100%;
+    overflow: hidden;
 
-    .sectionTitle {
-      margin-bottom: 24px;
-      font-size: 24px;
-      font-weight: 700;
-      line-height: 1.5;
-    }
-
-    .sectionDescription {
-      font-size: 14px;
-      font-weight: 400;
-      line-height: 1.2;
-      color: #999999;
-    }
-
-    .cardContainer {
+    .section {
       width: 100%;
-      display: flex;
-      gap: 20px;
-    }
 
-    .featured {
-    }
+      .sectionTitle {
+        margin-bottom: 24px;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 1.5;
+      }
 
-    .banner {
-      max-width: 75vw;
-    }
+      .sectionDescription {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.2;
+        color: #999999;
+      }
 
-    .original {
-      overflow: hidden;
-    }
+      .cardContainer {
+        width: 100%;
 
-    .latest {
-      flex-wrap: wrap;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
+
+      .featured {
+        display: flex;
+        gap: 20px;
+        border-radius: 12px;
+        overflow: auto;
+      }
+
+      .banner {
+        width: 100%;
+      }
+
+      .original {
+        display: grid;
+        grid-auto-flow: column;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-column-gap: 16px;
+        overflow: auto;
+      }
+
+      .latest {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-gap: 64px 16px;
+      }
     }
   }
 }
