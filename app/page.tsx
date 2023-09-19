@@ -1,31 +1,17 @@
-import { gql } from "@apollo/client";
 import { Mix_Content } from "@/graphql/types";
-import { getClient } from "@/lib/client";
 import {
   FEATURED_CONTENT,
   ORIGINAL_CONTENT,
   LATEST_CONTENT,
 } from "@/graphql/queries";
+import getContent from "@/utils/getContent";
 import Menus from "@/components/Menus/Menus";
+import ClientFeatured from "@/components/ClientFeatured/ClientFeatured";
 import FeaturedCard from "@/components/FeaturedCard/FeaturedCard";
 import Banner from "@/components/Banner/Banner";
 import OriginalCard from "@/components/OriginalCard/OriginalCard";
 import ContentCard from "@/components/ContentCard/ContentCard";
 import styles from "./page.module.scss";
-
-async function getContent(query: string) {
-  try {
-    const { data } = await getClient().query({
-      query: gql`
-        ${query}
-      `,
-    });
-    return data;
-  } catch (error) {
-    console.error("GraphQL query error:", error);
-    return null;
-  }
-}
 
 export default async function Home() {
   const featured = await getContent(FEATURED_CONTENT);
@@ -43,10 +29,18 @@ export default async function Home() {
               오늘 꼭 읽어봐야 할 추천 콘텐츠
             </div>
           </div>
-          <div className={`${styles.cardContainer} ${styles.featured}`}>
-            {featured.mix_content.map((content: Mix_Content) => {
-              return <FeaturedCard key={content.id} {...content} />;
-            })}
+          <div className={styles.cardContainer}>
+            <ClientFeatured>
+              {featured.mix_content.map(
+                (content: Mix_Content, index: number) => {
+                  return (
+                    <div key={index} className={styles.featuredBox}>
+                      <FeaturedCard {...content} />
+                    </div>
+                  );
+                }
+              )}
+            </ClientFeatured>
           </div>
         </section>
         <section className={styles.section}>
