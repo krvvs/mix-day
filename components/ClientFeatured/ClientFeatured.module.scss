@@ -1,0 +1,14 @@
+.featured {
+  display: flex;
+  gap: 20px;
+  border-radius: 12px;
+  overflow: auto;
+
+  .featuredBox {
+    min-width: 75%;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
