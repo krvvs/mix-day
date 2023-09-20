@@ -132,7 +132,6 @@ table {
 body {
   width: 100%;
   padding: 0 52px;
-  // overflow-x: hidden;
   font-family: "Apple SD Gothic Neo";
   color: #121212;
   background-color: #fafafa;
@@ -156,4 +155,14 @@ button {
   border: 0;
   background: transparent;
   cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 0 16px;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
 }

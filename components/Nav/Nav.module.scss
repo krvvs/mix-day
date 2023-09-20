@@ -3,11 +3,11 @@
   top: 0;
   width: calc(100vw - 10px);
   height: 80px;
+  margin: 0 0 43px -52px;
   padding: 0 62px 0 52px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 0 43px -52px;
   background-color: #fafafa;
 
   .flexUnit {
@@ -15,9 +15,11 @@
     align-items: center;
   }
 
-  .logo {
-    margin-right: 105px;
+  .hamburger {
+    display: none;
+  }
 
+  .logo {
     &:hover {
       cursor: pointer;
     }
@@ -28,6 +30,7 @@
     align-items: center;
     width: 300px;
     height: 38px;
+    margin-left: 105px;
     padding: 0 20px;
     border: 1.5px solid #cccccc;
     border-radius: 50px;
@@ -58,5 +61,29 @@
     font-weight: 600;
     color: #ffffff;
     background-color: #111111;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav {
+    width: 100vw;
+    height: 60px;
+    margin-left: -16px;
+    padding: 0 16px 0 16px;
+
+    .hamburger {
+      display: block;
+      margin-right: 15px;
+      cursor: pointer;
+    }
+
+    .searchBox {
+      display: none;
+    }
+
+    .searchIcon {
+      margin-right: 10px;
+      cursor: pointer;
+    }
   }
 }

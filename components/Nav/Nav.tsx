@@ -6,6 +6,13 @@ export default function Nav() {
   return (
     <header className={styles.nav}>
       <div className={styles.flexUnit}>
+        <Image
+          className={styles.hamburger}
+          src="/icons/hamburger.svg"
+          alt="hamburger button"
+          width={20}
+          height={20}
+        />
         <Link href="/">
           <Image
             className={styles.logo}
@@ -30,7 +37,16 @@ export default function Nav() {
           />
         </form>
       </div>
-      <button className={styles.signIn}>로그인</button>
+      <div className={styles.flexUnit}>
+        <Image
+          className={styles.searchIcon}
+          src="/icons/magnifier.svg"
+          alt="search icon"
+          width={20}
+          height={20}
+        />
+        <button className={styles.signIn}>로그인</button>
+      </div>
     </header>
   );
 }
