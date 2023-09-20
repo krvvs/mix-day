@@ -22,3 +22,12 @@
     line-height: 2;
   }
 }
+
+@media (max-width: 768px) {
+  .footer {
+    width: 100vw;
+    margin-top: 60px;
+    margin-left: -16px;
+    padding: 30px 16px 50px;
+  }
+}
