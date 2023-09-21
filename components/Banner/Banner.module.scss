@@ -19,3 +19,19 @@
     color: #aaaaaa;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .banner {
+    padding: 25px;
+    height: 90px;
+    align-content: center;
+
+    .title {
+      font-size: 16px;
+    }
+
+    .description {
+      display: none;
+    }
+  }
+}

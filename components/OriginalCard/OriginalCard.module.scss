@@ -1,52 +1,119 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
 
-.originalCard {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 20px;
-  aspect-ratio: 1/1;
-  min-width: 300px;
-  border-radius: 12px;
-  background-size: cover;
-  background-position: center center;
+.originalBox {
+  .originalCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    aspect-ratio: 1/1;
+    min-width: 300px;
+    border-radius: 12px;
+    background-size: cover;
+    background-position: center center;
 
-  .badge {
-    justify-content: center;
-    height: fit-content;
-    width: fit-content;
-    padding: 6px 10px;
-    font-family: "Montserrat", sans-serif;
-    font-size: 12px;
-    font-weight: 500;
-    line-height: 1.2;
-    color: #ffffff;
-    border-radius: 10px;
-    background-color: rgba(0, 0, 0, 0.5);
+    .badge {
+      justify-content: center;
+      height: fit-content;
+      width: fit-content;
+      padding: 6px 10px;
+      font-family: "Montserrat", sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 1.2;
+      color: #ffffff;
+      border-radius: 10px;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    .contentInfo {
+      .title {
+        margin-bottom: 5px;
+        width: 192px;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 1.5;
+        color: #ffffff;
+      }
+
+      .detail {
+        margin-bottom: 5px;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #ffffff;
+      }
+
+      .tag {
+        margin-right: 5px;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.4;
+        color: #638fff;
+      }
+    }
   }
 
-  .title {
-    margin-bottom: 5px;
-    width: 192px;
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 1.5;
-    color: #ffffff;
+  .contentInfoMobile {
+    display: none;
   }
+}
 
-  .info {
-    margin-bottom: 5px;
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #ffffff;
-  }
+@media screen and (max-width: 768px) {
+  .originalBox {
+    width: 235px;
+    height: 250px;
+    margin-bottom: 28px;
 
-  .tag {
-    margin-right: 5px;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.4;
-    color: #638fff;
+    .originalCard {
+      min-width: 235px;
+      max-width: 235px;
+      width: 235;
+      height: 140px;
+      padding: 0;
+      margin-bottom: 16px;
+      justify-content: flex-end;
+
+      .badge {
+        padding: 5px 10px;
+      }
+
+      .contentInfo {
+        display: none;
+      }
+    }
+    .contentInfoMobile {
+      display: block;
+
+      .title {
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 1.35;
+        margin-bottom: 5px;
+        color: #121212;
+      }
+
+      .detail {
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 1.5;
+        color: #777777;
+        margin-bottom: 5px;
+      }
+
+      .tags {
+        overflow: hidden;
+
+        .tag {
+          margin-right: 5px;
+          padding: 2px 4px 3px;
+          font-size: 11px;
+          font-weight: 500;
+          line-height: 1.2;
+          color: #376fa6;
+          border-radius: 2px;
+          background-color: #eeeeee;
+        }
+      }
+    }
   }
 }

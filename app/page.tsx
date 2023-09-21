@@ -22,6 +22,9 @@ export default async function Home() {
     <div className={styles.home}>
       <Menus />
       <main className={styles.feed}>
+        <div className={styles.bannerMobile}>
+          <Banner />
+        </div>
         <section className={styles.section}>
           <div className={styles.sectionTitle}>
             데일리 큐레이션
@@ -48,6 +51,7 @@ export default async function Home() {
             <Banner />
           </div>
         </section>
+        <div className={styles.dividerMobile}></div>
         <section className={styles.section}>
           <div className={styles.sectionTitle}>오리지널 콘텐츠</div>
           <div className={`${styles.cardContainer} ${styles.original}`}>
@@ -56,11 +60,17 @@ export default async function Home() {
             })}
           </div>
         </section>
+        <div className={styles.dividerMobile}></div>
         <section className={styles.section}>
           <div className={styles.sectionTitle}>최신 콘텐츠</div>
           <div className={`${styles.cardContainer} ${styles.latest}`}>
             {latest.mix_content.map((content: Mix_Content) => {
-              return <ContentCard key={content.id} {...content} />;
+              return (
+                <>
+                  <ContentCard key={content.id} {...content} />
+                  <div className={styles.dividerMobile}></div>
+                </>
+              );
             })}
           </div>
         </section>

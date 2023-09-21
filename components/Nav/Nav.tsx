@@ -39,7 +39,7 @@ export default function Nav() {
       </div>
       <div className={styles.flexUnit}>
         <Image
-          className={styles.searchIcon}
+          className={styles.searchIconMobile}
           src="/icons/magnifier.svg"
           alt="search icon"
           width={20}

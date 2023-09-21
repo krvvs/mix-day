@@ -39,3 +39,37 @@
     line-height: 1.35;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .featuredCard {
+    height: 270px;
+    padding: 25px 20px;
+    margin-bottom: 28px;
+
+    .tags {
+      display: none;
+    }
+
+    .title {
+      font-size: 22px;
+      line-height: 1.5;
+    }
+
+    .abstractcontents {
+      display: none;
+    }
+
+    .authorname {
+      margin-top: 20px;
+      font-size: 12px;
+    }
+
+    .tagsMobile {
+      margin-right: 5px;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.4;
+      color: #638fff;
+    }
+  }
+}

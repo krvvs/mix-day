@@ -12,3 +12,15 @@
     display: none;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .featured {
+    gap: 12px;
+    padding: 0 16px;
+    border-radius: 0;
+
+    .featuredBox {
+      min-width: 310px;
+    }
+  }
+}

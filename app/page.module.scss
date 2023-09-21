@@ -8,6 +8,10 @@
     gap: 70px;
     overflow: hidden;
 
+    .bannerMobile {
+      display: none;
+    }
+
     .section {
       width: 100%;
 
@@ -49,6 +53,68 @@
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         grid-gap: 64px 16px;
+
+        .dividerMobile {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .home {
+    .feed {
+      gap: 0;
+
+      .bannerMobile {
+        display: block;
+        margin: 0 16px;
+      }
+
+      .banner {
+        display: none;
+      }
+
+      .section {
+        .sectionTitle {
+          margin-top: 28px;
+          margin-bottom: 10px;
+          padding: 0 16px;
+          font-size: 18px;
+        }
+
+        .sectionDescription {
+          display: none;
+        }
+
+        .original {
+          display: flex;
+          gap: 12px;
+          padding: 0 16px;
+        }
+
+        .latest {
+          display: flex;
+          flex-direction: column;
+          row-gap: 24px;
+
+          .dividerMobile {
+            display: block;
+            width: 100vw;
+            height: 12.25px;
+            border-top: 1.75px solid rgba(0, 0, 0, 0.03);
+            background-color: #f0f0f0;
+          }
+        }
+      }
+
+      .dividerMobile {
+        display: block;
+        width: 100vw;
+        height: 12.25px;
+        border-top: 1.75px solid rgba(0, 0, 0, 0.03);
+        background-color: #f0f0f0;
       }
     }
   }

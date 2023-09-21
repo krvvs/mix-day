@@ -53,6 +53,10 @@
     }
   }
 
+  .searchIconMobile {
+    display: none;
+  }
+
   .signIn {
     height: 32px;
     padding: 0px 20px;
@@ -64,11 +68,12 @@
   }
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .nav {
     width: 100vw;
     height: 60px;
-    margin-left: -16px;
+    margin-left: 0;
+    margin-bottom: 5px;
     padding: 0 16px 0 16px;
 
     .hamburger {
@@ -81,7 +86,8 @@
       display: none;
     }
 
-    .searchIcon {
+    .searchIconMobile {
+      display: block;
       margin-right: 10px;
       cursor: pointer;
     }

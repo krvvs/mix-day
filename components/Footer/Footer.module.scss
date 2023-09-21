@@ -23,11 +23,10 @@
   }
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .footer {
     width: 100vw;
-    margin-top: 60px;
-    margin-left: -16px;
+    margin: 0;
     padding: 30px 16px 50px;
   }
 }
