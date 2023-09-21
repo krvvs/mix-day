@@ -87,8 +87,9 @@ video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-family: "Apple SD Gothic Neo";
+  font-family: "Apple SD Gothic Neo", sans-serif;
   vertical-align: baseline;
+  word-break: keep-all;
 }
 /* HTML5 display-role reset for older browsers */
 article,
@@ -131,7 +132,6 @@ table {
 body {
   width: 100%;
   padding: 0 52px;
-  // overflow-x: hidden;
   font-family: "Apple SD Gothic Neo";
   color: #121212;
   background-color: #fafafa;
@@ -155,4 +155,16 @@ button {
   border: 0;
   background: transparent;
   cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  header,
+  footer,
+  body {
+    padding: 0;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
 }

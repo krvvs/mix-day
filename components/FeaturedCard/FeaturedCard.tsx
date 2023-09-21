@@ -28,6 +28,15 @@ export default function FeaturedCard({
       <div className={styles.title}>{title}</div>
       <div className={styles.abstractcontents}>{abstractcontents}</div>
       <div className={styles.authorname}>{authorname}</div>
+      <div className={styles.tagsMobile}>
+        {mix_content_tags.map(({ tag }: Mix_Content_Tag) => {
+          return (
+            <span key={tag} className={styles.tag}>
+              #{contentTags[tag]}
+            </span>
+          );
+        })}
+      </div>
     </div>
   );
 }
